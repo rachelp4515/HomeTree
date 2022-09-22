@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Routes, Route, Link, HashRouter } from "react-router-dom";
+import App from './App';
+import Landing from './components/landing';
+import HostProp from './components/hostProp';
+import PropForm from './components/addPropForm';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='/hostProp' element={<HostProp />} />
+        <Route path='/propertyForm' element={<PropForm />} />
+      </Routes>
+    </HashRouter>
   </React.StrictMode>
 );
 
