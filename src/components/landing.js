@@ -18,6 +18,10 @@ function Landing() {
           <button> guest </button>
         </div>
       </div>
+
+      <div>
+          {/* <img src='/imgs/door.jpg' /> */}
+      </div>
     </div>
 
   );
