@@ -10,8 +10,8 @@ export default function Nav(){
             <ul>
             {/* make link tos */}
                 <li><Link to={'/'}><GiCurledLeaf/> hometree </Link> </li>
-                <li><Link to={'#'}> about </Link></li>
-                <li><Link to={'#'}> sign up </Link></li>
+                <li><Link to={'/'}> about </Link></li>
+                <li><Link to={'/signUp'}> sign up </Link></li>
             </ul>
             <div className='profBanner'>
 

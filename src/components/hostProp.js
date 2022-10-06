@@ -6,9 +6,12 @@ import { Link } from 'react-router-dom';
 
 function HostProp() {
     const [hostProp, setHostProp] = useState({})
+
+
     useEffect(() => {
         setHostProp(Backend.getProperty({}))
     }, [])
+    
     return (
         <div className='propPage'>
             <div className='prop'>
@@ -28,7 +31,7 @@ function HostProp() {
                         </ul>
                     </div>
                     <div className='generalPropInfo'>
-                        <h4><em> Guest View  <GiExitDoor/></em></h4>
+                        <h4><em> Guest View  <GiExitDoor /></em></h4>
                         <div className='coverImg'> + add a cover image </div>
                         <button> Options </button>
 

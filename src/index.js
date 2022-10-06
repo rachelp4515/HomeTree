@@ -8,20 +8,27 @@ import HostProp from './components/hostProp';
 import PropForm from './components/addPropForm';
 import Nav from './components/nav';
 import Rooms from './components/rooms';
+import { CookiesProvider } from 'react-cookie';
+import SignUp from './components/signup';
+import Login from './components/login';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <Nav/>
-      <Routes>
-        <Route path='/' element={<Landing />} />
-        <Route path='/hostProp' element={<HostProp />} />
-        <Route path='/propertyForm' element={<PropForm />} />
-        <Route path='/rooms' element={<Rooms />} />
-      </Routes>
-    </HashRouter>
+    <CookiesProvider>
+      <HashRouter>
+        <Nav />
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/signUp' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/hostProp' element={<HostProp />} />
+          <Route path='/propertyForm' element={<PropForm />} />
+          <Route path='/rooms' element={<Rooms />} />
+        </Routes>
+      </HashRouter>
+    </CookiesProvider>
   </React.StrictMode>
 );
 

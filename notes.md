@@ -65,3 +65,15 @@ Rooms have{
 }
 
 Guest *only* has account info, maybe saved properties
+
+**10.6 meeting**
+    - goals by end of intensive 
+        - auth routes fully done
+        - properties cruding and frontend looking good 
+    - get this shipped
+    - fix auth routes, start property cruding
+    - meet next wednesday 
+    - ios app ?
+    - unit tests ?
+
+# GET ALEX ON DB ACCESS
