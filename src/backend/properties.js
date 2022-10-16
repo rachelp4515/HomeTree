@@ -1,12 +1,16 @@
 import { hostProp } from "../data"
 
-
-
-export function createNewProperty(data) {
-    fetch("some url", {
-
+export async function createNewProperty(data) {
+    let res = await fetch("http://localhost:4000/create-prop", {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        headers: {
+            'Content-Type': 'application/json'
+          },
         body: JSON.stringify(data)
     })
+    let json = res.json()
+    return json
 }
 
 export function deleteProperty(data) {
@@ -21,50 +25,5 @@ export function getProperty(data) {
     return hostProp
 }
 
-// export function createUser() {
-    
 
-//     fetch("http://localhost:3000", {
-//         method: 'POST',
-//         mode: 'cors',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Access-Control-Allow-Credentials': true,
-//             'Access-Control-Allow-Origin': "http://localhost:4000"
-//         },
-//         credentials: "include",
-//         body: JSON.stringify({ username, password, email, phone }),
-
-//     })
-
-
-//         .then(res => res.json())
-//         .then(json => {
-//             setCookie("nToken", json.token)
-//             nav("/")
-
-//         })
-// }
-
-// export function login() {
-//     fetch("http://localhost:3000", {
-//         method: 'POST',
-//         mode: 'cors',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Access-Control-Allow-Credentials': true,
-//             'Access-Control-Allow-Origin': "http://localhost:4000"
-//         },
-//         credentials: "include",
-//         body: JSON.stringify({ username, password }),
-
-//     })
-
-
-//         .then(res => res.json())
-//         .then(json => {
-//             setCookie("nToken", json.token)
-//             nav("/")
-//         })
-// }
 

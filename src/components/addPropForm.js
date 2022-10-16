@@ -1,15 +1,17 @@
 import '../App.css';
 import { Form, Link, useNavigate } from "react-router-dom";
-import backend from "../backend"
+import Backend from "../backend"
 import { useForm } from "react-hook-form";
 
-export default function PropForm() {
+export default function PropForm(props) {
+    const {userId} = props
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const navigate = useNavigate();
+
     const onSubmit = event => {
 
         console.log(event);
-        // Backend.createNewProperty(event)
+        Backend.createNewProperty({...event, hostID: userId })
         window.scrollTo(0, 0);
         navigate('/hostProp')
     };
